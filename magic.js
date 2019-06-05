@@ -1,4 +1,46 @@
-var coor=[0,0,0];
+var kol = 1, plus = 0, x = -40, z = 0, col = 0, mol = 1;
+document.onload = function(){
+  for(kol; kol < 65; kol++){
+    if(plus == 8){
+      plus = 0;
+      x -= 80;
+      z -= 10;
+      mol++;
+    }
+    if(mol % 2){
+      if(kol % 2)
+        col = 0;
+      else
+        col = 1;
+    }else {
+      if(kol % 2)
+        col = 1;
+      else
+        col = 0;
+    }
+    var t = document.createElement("Transform");
+    t.setAttribute("id", String("kol"));
+    t.setAttribute("translation", " " + x + " " + -10 + " " + z);
+    var s = document.createElement("Shape");
+    var a = document.createElement("Appearance");
+    var m = document.createElement("Material");
+    m.setAttribute("diffuseColor", " " + col + " " + col + " " + col);
+    var b = document.createElement("Box");
+    b.setAttribute("size", " " + 10 + " " + 0.5 + " " + 10);
+    a.appendChild(m);
+    s.appendChild(a);
+    s.appendChild(b);
+    t.appendChild(s);
+    document.getElementById("pole").appendChild(t);
+    x += 10;
+    plus++;
+  }
+}
+function move(point){
+  point[1] +=5.2;
+  document.getElementById('peskaChaser').setAttribute('set_destination', point);
+}
+/*var coor=[0,0,0];
 var j = 0, g = 0, d = 0, a = 0, h = 0, f = 0;
 function make() {
   if( j > 4){
@@ -994,3 +1036,4 @@ function colorHH2(q) {
   }
   col.setAttribute("diffuseColor", " " + 0 + " " + 0 + " " + 0);
 }
+*/
