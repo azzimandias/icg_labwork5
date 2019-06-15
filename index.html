@@ -15,8 +15,72 @@
       <X3D id="x3d" xmlns="https://www.x3dom.org/x3dom">
         <Scene id="root">
           <Viewpoint position="0 10 100" rotation="1 0 0 2"></Viewpoint>
-          <PositionChaser DEF="peskaChaser" id="peskaChaser" duration="2" initialDestination="0 -4 0"></PositionChaser>
-          <Transform def="peska" id="peska" translation="0 15 0">
+          <!--<PositionChaser DEF="peskaChaser" id="peskaChaser" duration="2" initialDestination="-40 -4.2 0"></PositionChaser>-->
+          <Transform translation="-5 -12.5 -35">
+            <Shape>
+              <Appearance>
+                <ImageTexture url="lakder.jpg"></ImageTexture>
+              </Appearance>
+              <Box size="90 5 90"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska0" id="peska0" translation="-40 -4.2 0" onClick="HandelClickShape('peska0')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska1" id="peska1" translation="-30 -4.2 0" onClick="HandelClickShape('peska1')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska2" id="peska2" translation="-20 -4.2 0" onClick="HandelClickShape('peska2')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska3" id="peska3" translation="-10 -4.2 0" onClick="HandelClickShape('peska3')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska4" id="peska4" translation="0 -4.2 0" onClick="HandelClickShape('peska4')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska5" id="peska5" translation="10 -4.2 0" onClick="HandelClickShape('peska5')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska6" id="peska6" translation="20 -4.2 0" onClick="HandelClickShape('peska6')">
+            <Shape>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+              <Box size="5 10 5"></Box>
+            </Shape>
+          </Transform>
+          <Transform def="peska7" id="peska7" translation="30 -4.2 0" onClick="HandelClickShape('peska7')">
             <Shape>
               <Appearance>
                 <Material diffuseColor="1 1 1"></Material>
@@ -26,557 +90,9 @@
           </Transform>
           <TimeSensor DEF="Time" cycleInterval="5" loop="true"></TimeSensor>
           <CoordinateInterpolator DEF="CoordInt" key="0 0.5 1" keyValue="0 -4 0, 0 -2 0, 0 -4 0"></CoordinateInterpolator>
-          <ROUTE fromNode="peskaChaser" fromField="value_changed" toNode="peska" toField="set_translation"></ROUTE>
-
-          <!--<Transform translation="0 3 0">
-            <Shape>
-              <Appearance>
-                <Material diffuseColor="1 1 1"></Material>
-              </Appearance>
-              <Cone bottomradius="2" height="5"></Cone>
-            </Shape>
-            <Transform translation="0 2 0">
-              <Shape>
-                <Appearance>
-                  <Material diffuseColor="1 1 1"></Material>
-                </Appearance>
-                <Sphere></Sphere>
-              </Shape>
-            </Transform>
-          </Transform>-->
-                                                          <!--Дальше бога нет-->
-<Transform>
-<Group def="pole" id="pole" onClick="move(event.hitPnt); del();">
-<!--1
-          <Transform def="D1" id="D1" translation="-10 0 0">
-            <Shape onmouseover="colorD1(1)" onmouseout="colorDD1(1)" onclick="coloD1(1)">
-              <Appearance>
-                  <Material id="cD1" diffuseColor="linen"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="E1" id="E1" translation="0 0 0">
-            <Shape onmouseover="colorE1(1)" onmouseout="colorEE1(1)" onclick="coloE1(1)">
-              <Appearance>
-                  <Material id="cE1" diffuseColor="black"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="F1" id="F1" translation="10 0 0">
-            <Shape onmouseover="colorF1(1)" onmouseout="colorFF1(1)" onclick="coloF1(1)">
-              <Appearance>
-                  <Material id="cF1" diffuseColor="linen"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="G1" id="G1" translation="20 0 0">
-            <Shape onmouseover="colorG1(1)" onmouseout="colorGG1(1)" onclick="coloG1(1)">
-              <Appearance>
-                  <Material id="cG1" diffuseColor="black"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="H1" id="H1" translation="30 0 0">
-            <Shape onmouseover="colorH1(1)" onmouseout="colorHH1(1)" onclick="coloH1(1)">
-              <Appearance>
-                  <Material id="cH1" diffuseColor="linen"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="C1" id="C1" translation="-20 0 0">
-            <Shape onmouseover="colorC1(1)" onmouseout="colorCC1(1)" onclick="coloC1(1)">
-              <Appearance>
-                  <Material id="cC1" diffuseColor="black"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="B1" id="B1" translation="-30 0 0">
-            <Shape onmouseover="colorB1(1)" onmouseout="colorBB1(1)" onclick="coloB1(1)">
-              <Appearance>
-                  <Material id="cB1" diffuseColor="linen"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>
-          <Transform def="A1" id="A1" translation="-40 0 0">
-            <Shape onmouseover="colorA1(1)" onmouseout="colorAA1(1)" onclick="coloA1(1)">
-              <Appearance>
-                  <Material id="cA1" diffuseColor="black"></Material>
-              </Appearance>
-              <Box size="10 0.5 10"></Box>
-            </Shape>
-          </Transform>-->
-<!--1-->
-<!--2
-<Transform def="A2" id="A2" translation="-40 0 -10">
-  <Shape onmouseover="colorA2(2)" onmouseout="colorAA2(2)" onclick="coloA2(2)">
-    <Appearance>
-        <Material id="cA2" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B2" id="B2" translation="-30 0 -10">
-  <Shape onmouseover="colorB2(2)" onmouseout="colorBB2(2)" onclick="coloB2(2)">
-    <Appearance>
-        <Material id="cB2" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C2" id="C2" translation="-20 0 -10">
-  <Shape onmouseover="colorC2(2)" onmouseout="colorCC2(2)" onclick="coloC2(2)">
-    <Appearance>
-        <Material id="cC2" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D2" id="D2" translation="-10 0 -10">
-  <Shape onmouseover="colorD2(2)" onmouseout="colorDD2(2)" onclick="coloD2(2)">
-    <Appearance>
-        <Material id="cD2" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E2" id="E2" translation="0 0 -10">
-  <Shape onmouseover="colorE2(2)" onmouseout="colorEE2(2)" onclick="coloE2(2)">
-    <Appearance>
-        <Material id="cE2" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F2" id="F2" translation="10 0 -10">
-  <Shape onmouseover="colorF2(2)" onmouseout="colorFF2(2)" onclick="coloF2(2)">
-    <Appearance>
-        <Material id="cF2" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G2" id="G2" translation="20 0 -10">
-  <Shape onmouseover="colorG2(2)" onmouseout="colorGG2(2)" onclick="coloG2(2)">
-    <Appearance>
-        <Material id="cG2" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H2" id="H2" translation="30 0 -10">
-  <Shape onmouseover="colorH2(2)" onmouseout="colorHH2(2)" onclick="coloH2(2)">
-    <Appearance>
-        <Material id="cH2" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--2-->
-<!--3
-<Transform def="A3" id="A3" translation="-40 0 -20">
-  <Shape onmouseover="colorA1(3)" onmouseout="colorAA1(3)" onclick="coloA1(3)">
-    <Appearance>
-        <Material id="cA3" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B3" id="B3" translation="-30 0 -20">
-  <Shape onmouseover="colorB1(3)" onmouseout="colorBB1(3)" onclick="coloB1(3)">
-    <Appearance>
-        <Material id="cB3" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C3" id="C3" translation="-20 0 -20">
-  <Shape onmouseover="colorC1(3)" onmouseout="colorCC1(3)" onclick="coloC1(3)">
-    <Appearance>
-        <Material id="cC3" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D3" id="D3" translation="-10 0 -20">
-  <Shape onmouseover="colorD1(3)" onmouseout="colorDD1(3)" onclick="coloD1(3)">
-    <Appearance>
-        <Material id="cD3" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E3" id="E3" translation="0 0 -20">
-  <Shape onmouseover="colorE1(3)" onmouseout="colorEE1(3)" onclick="coloE1(3)">
-    <Appearance>
-        <Material id="cE3" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F3" id="F3" translation="10 0 -20">
-  <Shape onmouseover="colorF1(3)" onmouseout="colorFF1(3)" onclick="coloF1(3)">
-    <Appearance>
-        <Material id="cF3" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G3" id="G3" translation="20 0 -20">
-  <Shape onmouseover="colorG1(3)" onmouseout="colorGG1(3)" onclick="coloG1(3)">
-    <Appearance>
-        <Material id="cG3" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H3" id="H3" translation="30 0 -20">
-  <Shape onmouseover="colorH1(3)" onmouseout="colorHH1(3)" onclick="coloH1(3)">
-    <Appearance>
-        <Material id="cH3" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--3-->
-<!--4
-<Transform def="A4" id="A4" translation="-40 0 -30">
-  <Shape onmouseover="colorA2(4)" onmouseout="colorAA2(4)" onclick="coloA2(4)">
-    <Appearance>
-        <Material id="cA4" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B4" id="B4" translation="-30 0 -30">
-  <Shape onmouseover="colorB2(4)" onmouseout="colorBB2(4)" onclick="coloB2(4)">
-    <Appearance>
-        <Material id="cB4" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C4" id="C4" translation="-20 0 -30">
-  <Shape onmouseover="colorC2(4)" onmouseout="colorCC2(4)" onclick="coloC2(4)">
-    <Appearance>
-        <Material id="cC4" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D4" id="D4" translation="-10 0 -30">
-  <Shape onmouseover="colorD2(4)" onmouseout="colorDD2(4)" onclick="coloD2(4)">
-    <Appearance>
-        <Material id="cD4" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E4" id="E4" translation="0 0 -30">
-  <Shape onmouseover="colorE2(4)" onmouseout="colorEE2(4)" onclick="coloE2(4)">
-    <Appearance>
-        <Material id="cE4" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F4" id="F4" translation="10 0 -30">
-  <Shape onmouseover="colorF2(4)" onmouseout="colorFF2(4)" onclick="coloF2(4)">
-    <Appearance>
-        <Material id="cF4" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G4" id="G4" translation="20 0 -30">
-  <Shape onmouseover="colorG2(4)" onmouseout="colorGG2(4)" onclick="coloG2(4)">
-    <Appearance>
-        <Material id="cG4" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H4" id="H4" translation="30 0 -30">
-  <Shape onmouseover="colorH2(4)" onmouseout="colorHH2(4)" onclick="coloH2(4)">
-    <Appearance>
-        <Material id="cH4" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--4-->
-<!--5
-<Transform def="A5" id="A5" translation="-40 0 -40">
-  <Shape onmouseover="colorA1(5)" onmouseout="colorAA1(5)" onclick="coloA1(5)">
-    <Appearance>
-        <Material id="cA5" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B5" id="B5" translation="-30 0 -40">
-  <Shape onmouseover="colorB1(5)" onmouseout="colorBB1(5)" onclick="coloB1(5)">
-    <Appearance>
-        <Material id="cB5" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C5" id="C5" translation="-20 0 -40">
-  <Shape onmouseover="colorC1(5)" onmouseout="colorCC1(5)" onclick="coloC1(5)">
-    <Appearance>
-        <Material id="cC5" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D5" id="D5" translation="-10 0 -40">
-  <Shape onmouseover="colorD1(5)" onmouseout="colorDD1(5)" onclick="coloD1(5)">
-    <Appearance>
-        <Material id="cD5" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E5" id="E5" translation="0 0 -40">
-  <Shape onmouseover="colorE1(5)" onmouseout="colorEE1(5)" onclick="coloE1(5)">
-    <Appearance>
-        <Material id="cE5" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F5" id="F5" translation="10 0 -40">
-  <Shape onmouseover="colorF1(5)" onmouseout="colorFF1(5)" onclick="coloF1(5)">
-    <Appearance>
-        <Material id="cF5" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G5" id="G5" translation="20 0 -40">
-  <Shape onmouseover="colorG1(5)" onmouseout="colorGG1(5)" onclick="coloG1(5)">
-    <Appearance>
-        <Material id="cG5" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H5" id="H5" translation="30 0 -40">
-  <Shape onmouseover="colorH1(5)" onmouseout="colorHH1(5)" onclick="coloH1(5)">
-    <Appearance>
-        <Material id="cH5" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--5-->
-<!--6
-<Transform def="A6" id="A6" translation="-40 0 -50">
-  <Shape onmouseover="colorA2(6)" onmouseout="colorAA2(6)" onclick="coloA2(6)">
-    <Appearance>
-        <Material id="cA6" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B6" id="B6" translation="-30 0 -50">
-  <Shape onmouseover="colorB2(6)" onmouseout="colorBB2(6)" onclick="coloB2(6)">
-    <Appearance>
-        <Material id="cB6" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C6" id="C6" translation="-20 0 -50">
-  <Shape onmouseover="colorC2(6)" onmouseout="colorCC2(6)" onclick="coloC2(6)">
-    <Appearance>
-        <Material id="cC6" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D6" id="D6" translation="-10 0 -50">
-  <Shape onmouseover="colorD2(6)" onmouseout="colorDD2(6)" onclick="coloD2(6)">
-    <Appearance>
-        <Material id="cD6" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E6" id="E6" translation="0 0 -50">
-  <Shape onmouseover="colorE2(6)" onmouseout="colorEE2(6)" onclick="coloE2(6)">
-    <Appearance>
-        <Material id="cE6" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F6" id="F6" translation="10 0 -50">
-  <Shape onmouseover="colorF2(6)" onmouseout="colorFF2(6)" onclick="coloF2(6)">
-    <Appearance>
-        <Material id="cF6" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G6" id="G6" translation="20 0 -50">
-  <Shape onmouseover="colorG2(6)" onmouseout="colorGG2(6)" onclick="coloG2(6)">
-    <Appearance>
-        <Material id="cG6" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H6" id="H6" translation="30 0 -50">
-  <Shape onmouseover="colorH2(6)" onmouseout="colorHH2(6)" onclick="coloH2(6)">
-    <Appearance>
-        <Material id="cH6" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--6-->
-<!--7
-<Transform def="A7" id="A7" translation="-40 0 -60">
-  <Shape onmouseover="colorA1(7)" onmouseout="colorAA1(7)" onclick="coloA1(7)">
-    <Appearance>
-        <Material id="cA7" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B7" id="B7" translation="-30 0 -60">
-  <Shape onmouseover="colorB1(7)" onmouseout="colorBB1(7)" onclick="coloB1(7)">
-    <Appearance>
-        <Material id="cB7" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C7" id="C7" translation="-20 0 -60">
-  <Shape onmouseover="colorC1(7)" onmouseout="colorCC1(7)" onclick="coloC1(7)">
-    <Appearance>
-        <Material id="cC7" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D7" id="D7" translation="-10 0 -60">
-  <Shape onmouseover="colorD1(7)" onmouseout="colorDD1(7)" onclick="coloD1(7)">
-    <Appearance>
-        <Material id="cD7" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E7" id="E7" translation="0 0 -60">
-  <Shape onmouseover="colorE1(7)" onmouseout="colorEE1(7)" onclick="coloE1(7)">
-    <Appearance>
-        <Material id="cE7" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F7" id="F7" translation="10 0 -60">
-  <Shape onmouseover="colorF1(7)" onmouseout="colorFF1(7)" onclick="coloF1(7)">
-    <Appearance>
-        <Material id="cF7" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G7" id="G7" translation="20 0 -60">
-  <Shape onmouseover="colorG1(7)" onmouseout="colorGG1(7)" onclick="coloG1(7)">
-    <Appearance>
-        <Material id="cG7" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H7" id="H7" translation="30 0 -60">
-  <Shape onmouseover="colorH1(7)" onmouseout="colorHH1(7)" onclick="coloH1(7)">
-    <Appearance>
-        <Material id="cH7" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--7-->
-<!--8
-<Transform def="A8" id="A8" translation="-40 0 -70">
-  <Shape onmouseover="colorA2(8)" onmouseout="colorAA2(8)" onclick="coloA2(8)">
-    <Appearance>
-        <Material id="cA8" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="B8" id="B8" translation="-30 0 -70">
-  <Shape onmouseover="colorB2(8)" onmouseout="colorBB2(8)" onclick="coloB2(8)">
-    <Appearance>
-        <Material id="cB8" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="C8" id="C8" translation="-20 0 -70">
-  <Shape onmouseover="colorC2(8)" onmouseout="colorCC2(8)" onclick="coloC2(8)">
-    <Appearance>
-        <Material id="cC8" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="D8" id="D8" translation="-10 0 -70">
-  <Shape onmouseover="colorD2(8)" onmouseout="colorDD2(8)" onclick="coloD2(8)">
-    <Appearance>
-        <Material id="cD8" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="E8" id="E8" translation="0 0 -70">
-  <Shape onmouseover="colorE2(8)" onmouseout="colorEE2(8)" onclick="coloE2(8)">
-    <Appearance>
-        <Material id="cE8" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="F8" id="F8" translation="10 0 -70">
-  <Shape onmouseover="colorF2(8)" onmouseout="colorFF2(8)" onclick="coloF2(8)">
-    <Appearance>
-        <Material id="cF8" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="G8" id="G8" translation="20 0 -70">
-  <Shape onmouseover="colorG2(8)" onmouseout="colorGG2(8)" onclick="coloG2(8)">
-    <Appearance>
-        <Material id="cG8" diffuseColor="linen"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>
-<Transform def="H8" id="H8" translation="30 0 -70">
-  <Shape onmouseover="colorH2(8)" onmouseout="colorHH2(8)" onclick="coloH2(8)">
-    <Appearance>
-        <Material id="cH8" diffuseColor="black"></Material>
-    </Appearance>
-    <Box size="10 0.5 10"></Box>
-  </Shape>
-</Transform>-->
-<!--8-->
-</Group>
-</Transform>
+          <!--<ROUTE id="ROUTE" fromNode="peskaChaser" fromField="value_changed" toNode="peska0" toField="set_translation"></ROUTE>-->
+          <Group def="pole" id="pole" onClick="move(event.hitPnt); del();">
+          </Group>
         </Scene>
       </X3D>
   </body>
