@@ -1,7 +1,7 @@
-var kol = 1, plus = 0, x = -40, z = 0, col = 0, mol = 1, moveLabel = 0;
+var kol = 1, plus = 0, x = -40, z = 0, col = 0, mol = 1, moveLabel = 0, svi = 0;
 var one = 0, two = 0;
-var matrix = [[]], watrix = [[]];
-var arr;
+var matrix = [[]], watrix = [[]], jatrix = [[]];
+var arr, array;
 var omg = 0, omgg = 0;
 document.onload = function(){
   for(kol; kol < 65; kol++){
@@ -26,6 +26,7 @@ document.onload = function(){
     t.setAttribute("id", String("kol"));
     t.setAttribute("translation", " " + x + " " + -10 + " " + z);
     arr = [x, -10, z];
+    array = [x + 5, -10, z - 5];
     var s = document.createElement("Shape");
     var a = document.createElement("Appearance");
     var m = document.createElement("Material");
@@ -40,6 +41,7 @@ document.onload = function(){
     document.getElementById("pole").appendChild(t);
     matrix[one][two] = arr;
     watrix[one][two] = arr;
+    jatrix[one][two] = array;
     two++;
     x += 10;
     plus++;
@@ -90,7 +92,17 @@ function HandelClickShape(nameOfShape){
   omgg = omg;
   omg++;
 }
+
+var i = 0, j;
+var govnoint;
 function move(point){
-  point[1] +=5.2;
+  for(j = 0; j < 64; j++){
+    govnoint = jatrix[i][j];
+    if(point[0] < govnoint[0] && point[2] > govnoint[2]){
+      point = matrix[i][j];
+      break;
+    }
+  }
+  point[1] +=5.1;
   document.getElementById('peskaChaser'+omgg).setAttribute('set_destination', point);
 }
