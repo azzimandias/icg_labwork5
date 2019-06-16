@@ -1,9 +1,9 @@
 var kol = 1, plus = 0, x = -40, z = 0, col = 0, mol = 1, moveLabel = 0, svi = 0;
 var one = 0, two = 0;
-var matrix = [[]], watrix = [[]], jatrix = [[]], peskaLabel = [0, 0, 0, 0, 0, 0, 0, 0];
-var arr, array;
+var matrix = [[]], watrix = [0, 0, 0, 0, 0, 0, 0, 0], jatrix = [[]], peskaLabel = [0, 0, 0, 0, 0, 0, 0, 0];
+var arr, array, blackPoint = [0, 0, 0];
 var omg = 0, omgg = 0;
-var peskaLabel0 = 0, peskaLabel1 = 0, peskaLabel2 = 0, peskaLabel3 = 0, peskaLabel4 = 0, peskaLabel5 = 0, peskaLabel6 = 0, peskaLabel7 = 0;
+var sringi = ["peska8", "peska9", "peska10", "peska11", "peska12", "peska13", "peska14", "peska15"];
 var dinamicPoint0 = [-40, -5, 0],
     dinamicPoint1 = [-30, -5, 0],
     dinamicPoint2 = [-20, -5, 0],
@@ -49,11 +49,35 @@ document.onload = function(){
     t.appendChild(s);
     document.getElementById("pole").appendChild(t);
     matrix[one][two] = arr;
-    watrix[one][two] = arr;
+    //watrix[one][two] = arr;
     jatrix[one][two] = array;
     two++;
     x += 10;
     plus++;
+  }
+  var name = 65;
+  kol = 0;
+  col = 0;
+  x = -40, z = -70;
+  for(kol; kol < 8; kol++){
+    var y = document.createElement("Transform");
+    y.setAttribute("id", sringi[kol]);
+    y.setAttribute("translation", " " + x + " " + -5 + " " + z);
+    blackPoint = [x, -5, z];
+    watrix[kol] = blackPoint;
+    var u = document.createElement("Shape");
+    var o = document.createElement("Appearance");
+    var f = document.createElement("Material");
+    f.setAttribute("diffuseColor", " " + col + " " + col + " " + col);
+    var l = document.createElement("Box");
+    l.setAttribute("size", " " + 5 + " " + 10 + " " + 5);
+    o.appendChild(f);
+    u.appendChild(o);
+    u.appendChild(l);
+    y.appendChild(u);
+    document.getElementById("root").appendChild(y);
+    x += 10;
+    name++;
   }
   obnull();
 }
@@ -119,7 +143,7 @@ function HandelClickShape(nameOfShape){
   omg++;
 }
 
-var i = 0, j;
+var i = 0, j, maf;
 var govnoint;
 function move(point){
   for(j = 0; j < 64; j++){
@@ -130,7 +154,9 @@ function move(point){
       break;
     }
   }
+  dol(point);
   document.getElementById('peskaChaser'+omgg).setAttribute('set_destination', point);
+  maf = point;
 }
 function change(p){
   var w = 0, state = 9;
@@ -181,5 +207,18 @@ function change(p){
 function obnull() {
   for(var mag = 0; mag < 8; mag++){
     peskaLabel[mag] = 0;
+  }
+}
+function dol(poi){
+  for(var mexx = 0; mexx < 8; mexx++){
+    var fff = [0, 0 ,0];
+    fff = watrix[mexx];
+    var ffd = [0, 0, 0];
+    ffd = poi;
+    if(fff[0] == ffd[0] && fff[1] == ffd[1] && fff[2] == ffd[2]){
+      var dolNode = document.getElementById(sringi[mexx]);
+      dolNode.remove();
+      break;
+    }
   }
 }
